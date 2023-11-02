@@ -240,14 +240,18 @@ ${headers.hooks
   if (docs.en.headers.card === 'true') {
     const slug = docs.en.location.replace(/(.*)\/(.*)\.md/, '$2');
     const exists = fs.existsSync(
-      path.resolve(__dirname, `../../docs/public/static/blog/${slug}/card.png`),
+      //§ Changed reference to `docs` to the root directory.
+      //path.resolve(__dirname, `../../docs/public/static/blog/${slug}/card.png`),
+      path.resolve(__dirname, `../../public/static/blog/${slug}/card.png`),
     );
 
     if (!exists) {
       throw new Error(
         [
           `MUI: the card image for the blog post "${slug}" is missing.`,
-          `Add a docs/public/static/blog/${slug}/card.png file and then restart Next.js or else remove card: true from the headers.`,
+          //§ Changed reference to `docs` to the root directory.
+          //`Add a docs/public/static/blog/${slug}/card.png file and then restart Next.js or else remove card: true from the headers.`,
+          `Add a public/static/blog/${slug}/card.png file and then restart Next.js or else remove card: true from the headers.`,
         ].join('\n'),
       );
     }

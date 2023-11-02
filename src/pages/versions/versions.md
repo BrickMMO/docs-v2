@@ -6,14 +6,14 @@
 
 The most recent stable version (✓) is recommended for use in production.
 
-{{"demo": "pages/versions/ReleasedVersions.js", "hideToolbar": true, "bg": "inline"}}
+{{"demo": "./ReleasedVersions.js", "hideToolbar": true, "bg": "inline"}}
 
 ## Latest versions
 
 Here you can find the latest unreleased documentation and code.
 You can use it to see what changes are coming and provide better feedback to MUI contributors.
 
-{{"demo": "pages/versions/LatestVersions.js", "hideToolbar": true, "bg": "inline"}}
+{{"demo": "./LatestVersions.js", "hideToolbar": true, "bg": "inline"}}
 
 ## Versioning strategy
 

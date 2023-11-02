@@ -157,6 +157,7 @@ module.exports = async function demoLoader() {
       const multipleDemoVersionsUsed = !demoName.endsWith('.js');
 
       // TODO: const moduleID = demoName;
+      //¶1698901645 : See below.
       // The import paths currently use a completely different format.
       // They should just use relative imports.
       let moduleID = `./${demoName.replace(

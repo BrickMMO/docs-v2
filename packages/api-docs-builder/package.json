@@ -14,7 +14,7 @@
     "@mui/markdown": "^5.0.0",
     "@mui/utils": "^5.14.16",
     "ast-types": "^0.14.2",
-    "docs": "^5.0.0",
+    "docs": "file:../../",
     "doctrine": "^3.0.0",
     "fast-glob": "^3.3.1",
     "fs-extra": "^11.1.1",

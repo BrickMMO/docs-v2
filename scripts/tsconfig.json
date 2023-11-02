@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../base-tsconfig.json",
   "include": ["*.ts", "i18n.js"],
   "compilerOptions": {
     "allowJs": true,
