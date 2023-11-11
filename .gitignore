@@ -18,7 +18,7 @@
 #/docs/pages/playground/
 #/docs/public/feed/
 /.env.local
-/docs
+#/docs
 /pages/playground/
 /public/feed/
 /examples/**/.cache
@@ -45,3 +45,4 @@ size-snapshot.json
 # vale downloaded config
 .github/styles/Google
 .github/styles/write-good
+/scripts/updateNotes.js
