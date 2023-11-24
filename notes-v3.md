@@ -43,10 +43,20 @@ This project is based on `material-ui-5.14.16`.
 `@mui/x-data-grid-premium` as well as `@mui/x-date-pickers-pro` both seem to require a license key since they're part of the premium MUI packages. This may not affect useability but it might cause possible issues down the line. Warnings can be seen when running `yarn export`.
 
 #### GITHUB JEKYLL PROCESSING
-Jekyll processing is disabled for this project when hosting using GitHub Pages because Next.js's static exports make use of the `_next` directory.
+Jekyll processing is disabled for this project when hosting using GitHub Pages because Next.js's static exports relies on the `_next` directory.
 
 >GitHub Pages automatically processes files with Jekyll, which interferes with the \_next directory. To unblock the \_next directory from being included in the final website, add an empty .nojekyll file to the root of the GitHub Pages repository.
+>
 >~[Kenneth Schnall: Hosting a Next.js website with GitHub Pages (kennethaschnall.com)](https://kennethaschnall.com/posts/hosting-a-nextjs-website-with-github-pages)
+
+>By default, Jekyll doesn't build files or folders that:
+> - are located in a folder called `/node_modules` or `/vendor`
+> - start with `_`, `.`, or `#`
+> - end with `~`
+> - are excluded by the `exclude` setting in your configuration file
+>   
+>   ~[About GitHub Pages and Jekyll - GitHub Docs](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)
+
 
 # Changelog
 #### INITIAL
@@ -103,3 +113,5 @@ Changed `docs` package in `/api-docs-builder/package.json` from `^5.0.0` to `fil
 Created `scripts/createNoJekyllFile.js` to generate an empty .nojekyll file in the static exports output directory.
 
 Added `"disable-jekyll": "node ./scripts/createNoJekyllFile.js",` to the `package.json`. Appended this script to `"export" : ...,` to be automatically called whenever a new static site export is generated.
+
+Added link to `notes-v3.md` to `README.md`.
