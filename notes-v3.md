@@ -28,7 +28,7 @@ This will call `rm -rf` on the `.next` directory before calling `yarn build`.
 # Static Page Exporting
 Export using `yarn export`. 
 
-This runs a recursive removal on `./docs` and calls `next export` with the output directory set to `docs`. It also runs the `./scripts/buildServiceWorker.js` script.
+This runs a recursive removal on `./docs` and calls `next export` with the output directory set to `docs`. It also runs the `./scripts/buildServiceWorker.js` script as well as the `./scripts/createNoJekyllFile.js`.
 
 
 # Internal Packages
@@ -38,10 +38,15 @@ This also lets us make changes to the internal packages without relying on their
 
 
 # Additional Notes
-`@mui/x-data-grid-premium` as well as `@mui/x-date-pickers-pro` both seem to require a license key since they're part of the premium MUI packages. This may not affect useability but it might cause possible issues down the line. Warnings can be seen when running `yarn export`.
-
 This project is based on `material-ui-5.14.16`.
 
+`@mui/x-data-grid-premium` as well as `@mui/x-date-pickers-pro` both seem to require a license key since they're part of the premium MUI packages. This may not affect useability but it might cause possible issues down the line. Warnings can be seen when running `yarn export`.
+
+#### GITHUB JEKYLL PROCESSING
+Jekyll processing is disabled for this project when hosting using GitHub Pages because Next.js's static exports make use of the `_next` directory.
+
+>GitHub Pages automatically processes files with Jekyll, which interferes with the \_next directory. To unblock the \_next directory from being included in the final website, add an empty .nojekyll file to the root of the GitHub Pages repository.
+>~[Kenneth Schnall: Hosting a Next.js website with GitHub Pages (kennethaschnall.com)](https://kennethaschnall.com/posts/hosting-a-nextjs-website-with-github-pages)
 
 # Changelog
 #### INITIAL
@@ -87,3 +92,14 @@ Added `/scripts/updateNotes.js` to automatically copy updated markdown notes to 
 Added `update-notes` script inside `package.json`.
 
 Updated `.gitignore` rules to allow `/docs` to be tracked. Also added `/scripts/updateNotes.js` to be untracked.
+
+#### 2023-11-24
+Added `"serve-static-docs": "npx http-server docs",` to `package.json` to serve the static website exported by the `export` script.
+
+Changed link to Github pages website from `https://docs.brickmmo.com` to `https://brickmmo.github.io/docs-v2`.
+
+Changed `docs` package in `/api-docs-builder/package.json` from `^5.0.0` to `file:../../`.
+
+Created `scripts/createNoJekyllFile.js` to generate an empty .nojekyll file in the static exports output directory.
+
+Added `"disable-jekyll": "node ./scripts/createNoJekyllFile.js",` to the `package.json`. Appended this script to `"export" : ...,` to be automatically called whenever a new static site export is generated.
