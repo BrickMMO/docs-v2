@@ -4,7 +4,7 @@ This repo stores the BrickMMO documentation. This repo will attempt to use the M
 
 THe build process uses the `docs` folder and is included in this repo and deployed using GitHub pages. 
 
-> This content is available at https://docs.brickmmo.com
+> This content is available at https://docs2.brickmmo.com
 
 ---
 

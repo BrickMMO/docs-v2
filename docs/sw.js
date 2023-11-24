@@ -1,5 +1,5 @@
 
-// uuid: Fri Nov 10 2023 21:36:40 GMT-0500 (Eastern Standard Time)
+// uuid: Fri Nov 24 2023 16:13:27 GMT-0500 (Eastern Standard Time)
 /* eslint-env serviceworker */
 // https://github.com/airbnb/javascript/issues/1632
 /* eslint-disable no-restricted-globals */
